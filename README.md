@@ -9,6 +9,9 @@
 - Sample "Create rectangles" command demonstrating UI ↔ sandbox messaging.
 - Local development workflow documented (import manifest, watch mode, debugging).
 
+- Inprogress
+  - [ ] Define the data that the plugin needs to collect from the Figma document (e.g. bound variables).
+
 ---
 
 A Figma plugin scaffolded with **React + TypeScript + Vite**. This document covers both how to build the plugin from scratch and how to run / test it locally inside the Figma desktop app after cloning.

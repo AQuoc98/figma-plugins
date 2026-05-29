@@ -17,6 +17,16 @@ body {
 
 h2 { margin: 0; font-size: 13px; }
 
+.card {
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #f6f8fa;
+}
+
 .row {
   display: flex;
   align-items: center;
@@ -24,13 +34,18 @@ h2 { margin: 0; font-size: 13px; }
   gap: 8px;
 }
 
-input[type='number'] {
-  width: 80px;
-  padding: 4px 6px;
-  border: 1px solid #d0d7de;
-  border-radius: 4px;
-  font: inherit;
+.label { color: #57606a; flex-shrink: 0; }
+
+.value {
+  font-weight: 500;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 220px;
 }
+
+.empty { color: #57606a; text-align: center; padding: 4px 0; }
 
 .actions { display: flex; gap: 8px; }
 
@@ -46,10 +61,43 @@ button {
   cursor: pointer;
 }
 
+button:disabled { background: #b1b8c0; cursor: not-allowed; }
+
 button.secondary {
   background: transparent;
   color: #1f2328;
   border: 1px solid #d0d7de;
 }
 
-button:hover { filter: brightness(0.95); }
+button.ghost {
+  flex: 0 0 auto;
+  background: transparent;
+  color: #18a0fb;
+  padding: 2px 8px;
+  font-size: 11px;
+}
+
+button:hover:not(:disabled) { filter: brightness(0.95); }
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid #d0d7de;
+  padding-top: 10px;
+}
+
+.result-actions { display: flex; gap: 4px; }
+
+.json {
+  margin: 0;
+  padding: 8px;
+  background: #0d1117;
+  color: #e6edf3;
+  border-radius: 6px;
+  font-size: 11px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  max-height: 180px;
+  overflow: auto;
+  white-space: pre;
+}
